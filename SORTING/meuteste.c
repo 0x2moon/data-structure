@@ -9,7 +9,7 @@ void printArray(int A[], int size);
  int main(){
 
     int arr[] = { 12, 11, 13, 5, 6, 7 };
-    mergeshort(arr, 0, TAM);
+    mergeshort(arr, 0, TAM-1);
 
     return 0;
  }
