@@ -1,2 +1,2 @@
-void merge(int arr[], int l, int m, int r);
-void mergeSort(int arr[], int l, int r);
+void merge(struct intVector *intVector, int l, int m, int r);
+void mergeSort(struct intVector *intVector, int l, int r);
