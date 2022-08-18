@@ -1,2 +1,2 @@
-void merge(struct intVector *intVector, int l, int m, int r);
-void mergeSort(struct intVector *intVector, int l, int r);
+void mergesort(struct intVector *vector, int inicio, int final);
+void merge(struct intVector *vector, int inicio, int meio, int final);

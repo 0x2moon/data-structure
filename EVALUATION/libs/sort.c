@@ -1,60 +1,68 @@
-/*#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include "tad.h"
+#define TAM 8
 
-void merge(struct intVector *vector, int l, int m, int r)
-{
-	// variaveis de controle
-	int i, j, k;
-	// indici
-	int n1 = m - l + 1;
-	int n2 = r - m;
+void merge(struct intVector *vector, int inicio, int meio, int final){
 
+	int controleesquerda = 0, controledireita = 0, controleprincipal = inicio;
 
-	int L[n1], R[n2];
+	int tamanhoesquerda = meio - inicio + 1;
+	int tamanhodireita  = final - meio;
 
-	for (i = 0; i < n1; i++)
-		L[i] = vector->data[ l + i];
-	for (j = 0; j < n2; j++)
-		R[j] = vector->data[m + 1 + j];
+	int esquerda[tamanhoesquerda];
+	int direita [tamanhodireita];
 
+	for (int i = 0; i < tamanhoesquerda; i++)
+	{
+		esquerda[i] = vector->data[inicio + i];	
+	}
 	
-	i = 0; j = 0; k = l;
-	while (i < n1 && j < n2) {
-		if (L[i] <= R[j]) {
-			vector->data[k] = L[i];
-			i++;
-		}
-		else {
-			vector->data[k] = R[j];
-			j++;
-		}
-		k++;
+	for (int i = 0; i < tamanhodireita; i++)
+	{
+		direita[i] = vector->data[meio + 1 + i];
 	}
 
-	while (i < n1) {
-		vector->data[k] = L[i];
-		i++;
-		k++;
+	while (controleesquerda < tamanhoesquerda && controledireita < tamanhodireita)
+	{
+		if (esquerda[controleesquerda] >= direita[controledireita])
+		{
+			vector->data[controleprincipal] = direita[controledireita];
+			controledireita++;
+		}
+		
+		else
+		{
+			vector->data[controleprincipal] = esquerda[controleesquerda];
+			controleesquerda++;
+		}
+		controleprincipal++;
+	}
+	
+	while (controleesquerda < tamanhoesquerda)
+	{
+		vector->data[controleprincipal] = esquerda[controleesquerda];
+		controleesquerda++;
+		controleprincipal++;
+	}
+	
+
+	while (controledireita < tamanhodireita)
+	{
+		vector->data[controleprincipal] = direita[controledireita];
+		controledireita++;
+		controleprincipal++;
 	}
 
-	while (j < n2) {
-		vector->data[k] = R[j];
-		j++;
-		k++;
-	}
+
 }
 
-void mergeSort(struct intVector *vector, int l, int r)
-{
-	if (l < r) {
-		int m = l + (r - l) / 2;
-		mergeSort(vector, l, m);
-		mergeSort(vector, m + 1, r);
-
-		merge(vector, l, m, r);
+void mergesort(struct intVector *vector, int inicio, int final){
+	if (inicio < final)
+	{   
+		int meio = inicio + (final - inicio) / 2;
+		mergesort(vector, inicio, meio);
+		mergesort(vector, meio + 1, final);
+		merge(vector, inicio, meio, final);
 	}
 }
-
-//refazer do inicio
-*/

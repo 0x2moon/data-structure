@@ -2,7 +2,8 @@
 #include "libs/sort.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM 8
+#include <time.h>
+#define TAM 100000
 
 int main(){
 struct intVector *vector = create(TAM); 
@@ -11,10 +12,10 @@ struct intVector *vector = create(TAM);
         int r = rand()%TAM;
         append(vector, r);
    }
-   
-   print(vector);
-   mergeSort(vector, 0, TAM);
-   printf ("\n\nOrdenado \n\n\n");
-   print(vector);
-    return 0;
+   clock_t start = clock();
+   mergesort(vector, 0, TAM);
+   clock_t end = clock();
+   double time = (double) (end - start) / CLOCKS_PER_SEC;
+   printf ("\n\n\nTime = %lf", time);   
+   return 0;
 }
