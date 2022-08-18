@@ -1,10 +1,12 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include "tad.h"
 
 void merge(struct intVector *vector, int l, int m, int r)
 {
+	// variaveis de controle
 	int i, j, k;
+	// indici
 	int n1 = m - l + 1;
 	int n2 = r - m;
 
@@ -54,10 +56,5 @@ void mergeSort(struct intVector *vector, int l, int r)
 	}
 }
 
-void printintVectoray(struct intVector *A, int size)
-{
-	int i;
-	for (i = 0; i < size; i++)
-		printf("%d ", A->data[i]);
-	printf("\n");}
-
+//refazer do inicio
+*/
