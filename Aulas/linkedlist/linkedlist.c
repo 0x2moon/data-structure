@@ -45,8 +45,18 @@ void add_end(slinkedlist *l, int val){
             aux = aux->next;
         }
         aux->next = p;
-        l->size++;
     }
-    
+    l->size++;    
+}
+
+void print_ll(slinkedlist *l){
+    SNode *p = l->begin;
+    printf("L -> ");
+    while (p != NULL)
+    {
+        printf("%d -> ", p->next);
+        p = p->next;
+    }
+    printf("NULL\n");
     
 }
