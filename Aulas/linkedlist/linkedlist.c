@@ -26,3 +26,27 @@ SNode *SNode_create(int val){
 
     return snode;
 }
+void add_first(slinkedlist *l, int val){
+    SNode *p = SNode_create(val);
+    p->next = l->begin;
+    l->begin = p;
+    l->size++;
+}
+
+void add_end(slinkedlist *l, int val){
+    SNode *p = SNode_create(val);
+    if (l->begin == NULL)
+    {
+        l->begin = p;
+    }else{
+        SNode *aux = l->begin;
+        while (p->next != NULL)
+        {
+            aux = aux->next;
+        }
+        aux->next = p;
+        l->size++;
+    }
+    
+    
+}
