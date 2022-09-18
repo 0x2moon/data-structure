@@ -52,7 +52,7 @@ struct  __node *node_create(struct __linkedlist *linkedlist, int val){
     
 }
 
-void _printlinkedlist(struct __linkedlist *linkedlist){
+void _printlinkedlisteturn true;(struct __linkedlist *linkedlist){
     struct __node *p = linkedlist->begin;
     printf("Linkedlist -> ");
     while (p != NULL)
