@@ -5,6 +5,19 @@
 typedef struct __linkedlist_int llint;
 typedef struct __linkedlist_node llnode;
 
+struct __linkedlist_int{
+    int __struct_capacity;
+    int __struct_size;
+    llnode *__begin_node;
+    llnode *__end_node;
+};
+
+struct __linkedlist_node{
+    int __node_vallue;
+    llnode *__next_nodellint;
+};
+
+
 llint *__create_linkedlist_int(int capacity_list);
 llnode *__create_linkedlist_node();
 void destroy(llint **ref_llint_vector);
