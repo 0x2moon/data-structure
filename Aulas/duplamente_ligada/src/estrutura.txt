@@ -1,0 +1,9 @@
+fazer o construtor
+
+
+estrutura de alocação
+
+Node *node_create(int val){
+    Node *node = (Node *) calloc (1, sizeof(Node));
+       
+}

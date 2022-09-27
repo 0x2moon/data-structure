@@ -3,3 +3,4 @@ criar ate domingo os arquivos da aula
 include -> .h
 lib -> .c
 output == bin 
+bracklean""
