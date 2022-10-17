@@ -40,7 +40,7 @@ int __capacity_dlist(dlist *__dlist){
 }
 bool __full_dlist (dlist *__dlist);
 bool __dlist_empty(dlist *__dlist);
-
+.
 void __addFirst_linkedlist_int(llint *llint_vector, int vallue){
     llnode *nodelist_first = __create_linkedlist_node();
     nodelist_first->__node_vallue = vallue;
