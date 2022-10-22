@@ -6,10 +6,12 @@ struct __node;
 struct __listacircular;
 
 struct  __listacircular * lcircular_create();
-struct  __node *node_create(struct __listacircular * clist, int val);
+struct  __node *node_create();
 void __destroy_listacircular(struct __listacircular **clist);
 
 bool _isempty(struct __listacircular *clist);
+bool _isord(struct __listacircular *clist);
+
 
 void _add_first(struct __listacircular *clist, int val);
 void _add_end(struct __listacircular *clist, int val);
